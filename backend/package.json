@@ -7,7 +7,7 @@
     "dev": "nodemon src/server.ts",
     "build": "tsc",
     "postinstall": "npm run build",
-    "start": "node dist/server.js",
+    "start": "node dist/scripts/migrate.js && node dist/server.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "migrate": "ts-node src/scripts/migrate.ts",
