@@ -17,7 +17,6 @@ export default function VideoPage() {
   const [subjectTree, setSubjectTree] = useState<SubjectTree | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
-  const [_player, setPlayer] = useState<YouTubePlayer | null>(null);
   const progressInterval = useRef<NodeJS.Timeout | null>(null);
 
   const subjectId = Number(params.subjectId);
@@ -64,7 +63,6 @@ export default function VideoPage() {
   };
 
   const onPlayerReady = (event: { target: YouTubePlayer }) => {
-    setPlayer(event.target);
     
     // Seek to last position if available
     if (video?.progress?.last_position_seconds) {
